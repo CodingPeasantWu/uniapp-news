@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "uni-app",
+  "navigationBarTextStyle": "white",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "navbar": "/components/navbar/navbar",
+    "tab": "/components/tab/tab",
+    "tab-list": "/components/tab-list/tab-list"
+  }
+}
