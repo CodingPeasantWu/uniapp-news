@@ -28,9 +28,9 @@
 				windowWidth:375
 			};
 		},
-		onReady() {
-			console.log(this.height+this.navbarHeight)
-		},
+		// onReady() {
+		// 	console.log(this.height+this.navbarHeight)
+		// },
 		created() {
 			const info = uni.getSystemInfoSync()
 			// 状态栏的高度

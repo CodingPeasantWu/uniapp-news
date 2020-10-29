@@ -1,21 +1,43 @@
 <template>
-	<scroll-list class='scroll-list'>
-		<card-list mode='base'></card-list>
-		<card-list mode='column'></card-list>	
-		<card-list mode='image'></card-list>
-		<card-list mode='base'></card-list>
-		<card-list mode='column'></card-list>	
-		<card-list mode='image'></card-list>
+	<scroll-list class='scroll-list' @loadmore='loadMore'>
+		<card-list   v-for='(item) in article' :key='index' :item='item' ></card-list>
+		<uni-load-more v-if="article.length > 7 || article.length===0 " iconType="snow" :status="!load.loading ? 'loading' : load.loading  "></uni-load-more>
 	</scroll-list>
 </template>
 
 <script>
 	export default {
-		data() {
+		props:{
+			article:{
+				type:Array,
+				default(){
+					return []
+				}
+			},
+			load:{
+				type:Object,
+				default(){
+					return {
+						loading:'loading'
+					}
+				}
+			}
+		},
+		data(){
 			return {
-				
-			};
-		}
+				loading:{}
+			}
+		},
+		methods:{
+			loadMore(){
+				this.$emit('loadmore')
+			}
+		},
+		// watch:{
+		// 	load(newVal){
+		// 		console.log(newVal)
+		// 	}
+		// }
 	}
 </script>
 

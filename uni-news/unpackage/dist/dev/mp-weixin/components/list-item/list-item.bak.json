@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "scroll-list": "/components/scroll-list/scroll-list",
-    "card-list": "/components/card-list/card-list"
-  },
-  "component": true
-}

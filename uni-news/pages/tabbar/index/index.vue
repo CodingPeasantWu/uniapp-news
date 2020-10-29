@@ -3,7 +3,7 @@
 		<navbar></navbar>
 		<tab :labelList='labelList' :swiperIndex='swiperIndex' @tab='change'></tab>
 		<view class="tab-list">
-			<tab-list :tabList='labelList' :tabIndex='tabIndex' @changeSwiper='changeSwiper'></tab-list>
+			<tab-list :labelList='labelList' :tabIndex='tabIndex'  @changeSwiper='changeSwiper'></tab-list>
 		</view>
 			
 	</view>
@@ -20,7 +20,7 @@
 				title: 'Hello',
 				labelList:[],
 				swiperIndex:0,
-				tabIndex:0
+				tabIndex:0,
 			}
 		},
 		onLoad() {
@@ -28,16 +28,14 @@
 		},
 		methods: {
 			getLabel(){
-				var arr = [
-					{
-						id:0,
-						name:'全部'
-					}
-				]
 				this.$api.get_label({
 					// name:'get_label'
 				}).then(res=>{
-					this.labelList = [...arr,...res.data]
+					const {data} = res
+					data.unshift({
+						name:'全部'
+					})
+					this.labelList = data
 					// console.log(this.labelList)
 				})
 			},
