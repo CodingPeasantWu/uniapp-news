@@ -3,19 +3,27 @@
 		<view class="navbar-fixed"> 
 		<!-- 状态栏 -->
 			<view :style="{height: height + 'px'}"></view>
-			<view class="nav-content" :style="{height:navbarHeight + 'px',width:windowWidth + 'px'}">
+			<view class="nav-content":class="{search:isSearch}" :style="{height:navbarHeight + 'px',width:windowWidth + 'px'}" @click.stop="toSearch">
 				<!-- 导航栏-->
-				<view class="navbar-search">
+				<view class="back-icon" v-if="isSearch" @click="backToIndex">
+					<uni-icons type="back" size="22" color="#999"></uni-icons>
+				</view>
+				<view class="navbar-search" v-if="!isSearch">
 					<view class="navbar-search-icon">
-						<uni-icons type="search" size="16" color="#999"></uni-icons>
+						<uni-icons type="search" size="16" color="#fff"></uni-icons>
 					</view>
 					<view class="navbar-search-text">uniappd、vue</view>
 				</view>
+				<view v-else class="navbar-search">
+					<input class="navbar-search-text" type="text"  placeholder="请输入您要搜索的内容" v-model="val" @input='getValue'/>
+				</view>
+			
+				
 			</view>
 			
 		</view>
-		<!-- <view :style="{height: (height+navbarHeight) + 'px'}"></view> -->
-		<view style="height: 60px"></view>
+		<view :style="{height: (height+navbarHeight) + 'px'}"></view>
+		<!-- <view style="height: 60px"></view> -->
 	</view>
 </template>
 
@@ -25,12 +33,29 @@
 			return {
 				height:20,
 				navbarHeight:45,
-				windowWidth:375
+				windowWidth:375,
+				val:'',
 			};
+		},
+		props:{
+			isSearch:{
+				type:Boolean,
+				default:false
+			},
+			value:{
+				type:[String,Number],
+				default:''
+				
+			}
 		},
 		// onReady() {
 		// 	console.log(this.height+this.navbarHeight)
 		// },
+		watch:{
+			value(newVal){
+				this.val = newVal
+			}
+		},
 		created() {
 			const info = uni.getSystemInfoSync()
 			// 状态栏的高度
@@ -41,9 +66,23 @@
 			this.navbarHeight = (menuButtonInfo.bottom - info.statusBarHeight) + (menuButtonInfo.top - info.statusBarHeight)
 			this.windowWidth = menuButtonInfo.left
 			// #endif
-			
-			
-			// console.log(menuButtonInfo)
+		},
+		methods:{
+			toSearch(){
+				if(this.isSearch) return
+				uni.navigateTo({
+					url:'/pages/search/search'
+				})
+			},
+			backToIndex(){
+				uni.switchTab({
+					url:'/pages/tabbar/index/index'
+				})
+			},
+			getValue(e){
+				this.val = e.detail.value
+				this.$emit('input',this.val)
+			}
 		}
 	}
 </script>
@@ -84,7 +123,18 @@
 						width: 100%;
 					}
 				}
+				&.search{
+					padding-left: 0;
+					.back-icon{
+						margin-left: 10px;
+						margin-right: 10px;
+					}
+					.navbar-search{
+						border-radius: 5px;
+					}
+				}
 			}
+			
 			
 		}	
 	}

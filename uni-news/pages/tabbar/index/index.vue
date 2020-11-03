@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<navbar></navbar>
+		<navbar ></navbar>
 		<tab :labelList='labelList' :swiperIndex='swiperIndex' @tab='change'></tab>
 		<view class="tab-list">
 			<tab-list :labelList='labelList' :tabIndex='tabIndex'  @changeSwiper='changeSwiper'></tab-list>
@@ -21,6 +21,7 @@
 				labelList:[],
 				swiperIndex:0,
 				tabIndex:0,
+				isSearch:false
 			}
 		},
 		onLoad() {

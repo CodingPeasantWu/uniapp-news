@@ -66,4 +66,14 @@
   color: #999;
   width: 100%;
 }
+.navbar .navbar-fixed .nav-content.search {
+  padding-left: 0;
+}
+.navbar .navbar-fixed .nav-content.search .back-icon {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.navbar .navbar-fixed .nav-content.search .navbar-search {
+  border-radius: 5px;
+}
 

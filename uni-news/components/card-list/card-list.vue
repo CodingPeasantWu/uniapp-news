@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<!-- 基础卡片 -->
-		<view class="list-card" v-if="item.mode === 'base'">
+		<view class="list-card" v-if="item.mode === 'base'" @click="openDetail">
 			<view class="list-card-img">
 				<image :src="item.cover[0]" mode="aspectFit"></image>
 			</view>
@@ -77,6 +77,11 @@
 				default(){
 					return {}
 				}
+			}
+		},
+		methods:{
+			openDetail(){
+				this.$emit('click',this.item)
 			}
 		}
 	}

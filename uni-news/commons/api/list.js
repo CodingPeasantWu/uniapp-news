@@ -26,3 +26,10 @@ export const update_like = (data) =>{
 		data
 	})
 }
+
+export const get_search = (data) =>{
+	return $https({
+		url:'get_search',
+		data
+	})
+}
