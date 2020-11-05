@@ -118,7 +118,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
 //
 //
 //
@@ -135,34 +135,8 @@ var _default2 =
 {
   data: function data() {
     return {
-      clickIndex: 0
-      // list:[
-      // 	{
-      // 		name:'uniapp'
-      // 	},
-      // 	{
-      // 		name:'vue'
-      // 	},
-      // 	{
-      // 		name:'react'
-      // 	},
-      // 	{
-      // 		name:'前端'
-      // 	},
-      // 	{
-      // 		name:'后端'
-      // 	},
-      // 	{
-      // 		name:'java'
-      // 	},
-      // 	{
-      // 		name:'uniapp'
-      // 	},
-      // 	{
-      // 		name:'uniapp'
-      // 	},
-      // ]
-    };
+      clickIndex: 0 };
+
   },
   props: {
     labelList: {
@@ -183,6 +157,11 @@ var _default2 =
         data: item,
         index: index });
 
+    },
+    toTag: function toTag() {
+      uni.navigateTo({
+        url: '/pages/tag/tag' });
+
     } },
 
   watch: {
@@ -190,6 +169,7 @@ var _default2 =
       this.clickIndex = newVal;
       // console.log(newVal,oldVal)
     } } };exports.default = _default2;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

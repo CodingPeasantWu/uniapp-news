@@ -5,7 +5,7 @@
 				<view class="tab-scroll-item" :class="{active:clickIndex === index}" v-for="(item,index) in labelList" :key='index' @click="changeColor(item,index)">{{item.name}}</view>
 			</view>
 		</scroll-view>
-		<view class="tab-icons">
+		<view class="tab-icons" @click="toTag">
 			<uni-icons type="gear" size="26" color="#666"></uni-icons>
 		</view>
 	</view>
@@ -16,32 +16,6 @@
 		data() {
 			return {
 				clickIndex:0,
-				// list:[
-				// 	{
-				// 		name:'uniapp'
-				// 	},
-				// 	{
-				// 		name:'vue'
-				// 	},
-				// 	{
-				// 		name:'react'
-				// 	},
-				// 	{
-				// 		name:'前端'
-				// 	},
-				// 	{
-				// 		name:'后端'
-				// 	},
-				// 	{
-				// 		name:'java'
-				// 	},
-				// 	{
-				// 		name:'uniapp'
-				// 	},
-				// 	{
-				// 		name:'uniapp'
-				// 	},
-				// ]
 			};
 		},
 		props:{
@@ -62,6 +36,11 @@
 				this.$emit('tab',{
 					data:item,
 					index
+				})
+			},
+			toTag(){
+				uni.navigateTo({
+					url:'/pages/tag/tag'
 				})
 			}
 		},

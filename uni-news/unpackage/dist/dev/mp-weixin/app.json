@@ -3,7 +3,8 @@
     "pages/tabbar/index/index",
     "pages/tabbar/follow/follow",
     "pages/tabbar/my/my",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/tag/tag"
   ],
   "subPackages": [],
   "window": {
@@ -37,6 +38,5 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap28.json"
+  "usingComponents": {}
 }

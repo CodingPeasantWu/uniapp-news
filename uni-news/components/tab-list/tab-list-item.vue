@@ -1,6 +1,6 @@
 <template>
 	<scroll-list class='scroll-list' @loadmore='loadMore'>
-		<card-list   v-for='(item) in article' :key='index' :item='item' ></card-list>
+		<card-list   v-for='(item,index) in article' :key='index' :item='item' ></card-list>
 		<uni-load-more v-if="article.length > 7 || article.length===0 " iconType="snow" :status="!load.loading ? 'loading' : load.loading  "></uni-load-more>
 	</scroll-list>
 </template>

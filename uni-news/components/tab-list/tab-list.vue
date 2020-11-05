@@ -85,6 +85,8 @@
 		},
 		watch:{
 			tabIndex(newVal){
+				this.articleNewData = {},
+				this.load = {}
 				this.swiperIndex = newVal
 			},
 			labelList(newVal){
