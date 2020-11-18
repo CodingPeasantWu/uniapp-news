@@ -25,12 +25,14 @@
 			}
 		},
 		onLoad() {
-			uni.$on('labelChange',(res)=>{
-				this.getLabel()
+			
+			uni.$on('labelChange',()=>{
+				
 				this.labelList=[]
 				this.swiperIndex=0
 				this.tabIndex=0
-			}),
+				this.getLabel()
+			})
 			this.getLabel()
 		},
 		methods: {
@@ -38,6 +40,7 @@
 				this.$api.get_label({
 					// name:'get_label'
 				}).then(res=>{
+					// console.log(res);
 					const {data} = res
 					data.unshift({
 						name:'全部'

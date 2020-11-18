@@ -16,7 +16,7 @@
 				</view>
 			</view>
 			<scroll-list class='scroll-list' v-else >
-				<uni-load-more v-if="loading" status=loading iconType='snow'></uni-load-more>
+				<uni-load-more v-if="loading" status='loading' iconType='snow'></uni-load-more>
 				<view v-if="searchListData.length">
 					<card-list   v-for='(item,index) in searchListData' :key='index' :item='item' @click='setHistory'></card-list>
 				</view>

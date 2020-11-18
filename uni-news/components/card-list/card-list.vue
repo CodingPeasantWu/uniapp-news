@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<!-- 基础卡片 -->
-		<view class="list-card" v-if="item.mode === 'base'" @click="openDetail">
+		<view class="list-card" v-if="item.mode === 'base'" @click="openDetail(item)">
 			<view class="list-card-img">
 				<image :src="item.cover[0]" mode="aspectFit"></image>
 			</view>
@@ -20,7 +20,7 @@
 		</view>
 		
 		<!-- 多图卡片 -->
-		<view v-if="item.mode === 'column'" class="list-card mode-column">
+		<view v-if="item.mode === 'column'" class="list-card mode-column" @click="openDetail(item)">
 			<view class="list-card-content">
 				<view class="list-card-title">
 					<text>{{item.title}}</text>
@@ -42,7 +42,7 @@
 		</view>
 		
 		<!-- 大图模式 -->
-		<view v-if="item.mode === 'image'" class="list-card mode-image">
+		<view v-if="item.mode === 'image'" class="list-card mode-image" @click="openDetail(item)">
 			<view class="list-card-img">
 				<image :src="item.cover[0]" mode="aspectFill"></image>
 			</view>
@@ -80,8 +80,22 @@
 			}
 		},
 		methods:{
-			openDetail(){
-				this.$emit('click',this.item)
+			openDetail(item){
+				// console.log(item);
+				const data = this.item
+				this.$emit('click',data)
+				// let article = JSON.stringify(this.item)
+				let params = {
+					_id:data._id,
+					title:data.title,
+					create_time:data.create_time,
+					thumbs_up_count:data.thumbs_up_count,
+					browse_count:data.thumbs_up_count,
+					author:data.author
+				}
+				uni.navigateTo({
+					url:`/pages/detail/detail?params=`+JSON.stringify(params)
+				})
 			}
 		}
 	}

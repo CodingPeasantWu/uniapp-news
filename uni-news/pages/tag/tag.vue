@@ -80,7 +80,7 @@
 				this.$api.get_label({
 					type:'all'
 				}).then(res=>{
-					console.log(res)
+					// console.log(res)
 					const {data} = res
 					// let length = data.length
 					// this.editList= data.splice(length-1,1)
@@ -88,7 +88,7 @@
 					this.tagList = data.filter(item=>item.current)
 					// console.log(this.tagList);
 					this.editList = data.filter(item=>!item.current)
-					console.log(this.editList);
+					// console.log(this.editList);
 					this.loading = false
 				}).catch(err=>{
 					this.loading = false

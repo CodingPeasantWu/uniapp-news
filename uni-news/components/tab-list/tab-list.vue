@@ -36,6 +36,11 @@
 		created() {
 			// this.getArticle(this.swiperIndex)
 			// console.log(this.tabList)
+			uni.$on('update',()=>{
+				this.articleNewData = {}
+				this.load = {}
+				this.getArticle(this.tabIndex)
+			})
 		},
 		methods:{
 			changeSwiper(e){
@@ -89,7 +94,7 @@
 				this.load = {}
 				this.swiperIndex = newVal
 			},
-			labelList(newVal){
+			labelList(newVal,oldVal){
 				if(newVal.length === 0) return
 				this.getArticle(this.swiperIndex)
 			}

@@ -31,7 +31,7 @@
 			handLike(){
 				this.like = !this.like
 				this.setUpdateLike()
-				console.log(this.item._id)
+				// console.log(this.item._id)
 			},
 			setUpdateLike(){
 				uni.showLoading()

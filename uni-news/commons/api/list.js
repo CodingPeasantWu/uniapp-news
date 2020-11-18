@@ -40,3 +40,37 @@ export const update_label = (data) =>{
 		data
 	})
 }
+export const get_detail = (data) =>{
+	return $https({
+		url:'get_detail',
+		data
+	})
+}
+
+export const update_comment = (data) =>{
+	return $https({
+		url:"update_comment",
+		data
+	})
+}
+
+export const get_comment = (data) =>{
+	return $https({
+		url:"get_comment",
+		data
+	})
+}
+
+export const update_author = (data) =>{
+	return $https({
+		url:"update_author",
+		data
+	})
+}
+
+export const update_thumbsup = (data) =>{
+	return $https({
+		url:"update_thumbsup",
+		data
+	})
+}
