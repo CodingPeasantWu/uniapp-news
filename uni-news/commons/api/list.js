@@ -74,3 +74,38 @@ export const update_thumbsup = (data) =>{
 		data
 	})
 }
+
+export const get_follow = (data) =>{
+	return $https({
+		url:'get_follow',
+		data
+	})
+}
+
+export const get_author = (data) =>{
+	return $https({
+		url:'get_author',
+		data
+	})
+}
+
+export const get_user = (data) =>{
+	return $https({
+		url:'get_user',
+		data
+	})
+}
+
+export const get_my_article = (data) =>{
+	return $https({
+		url:'get_my_article',
+		data
+	})
+}
+
+export const update_feedback = (data) =>{
+	return $https({
+		url:'update_feedback',
+		data
+	})
+}

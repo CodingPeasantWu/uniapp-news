@@ -46,7 +46,7 @@
 					let oldData = JSON.parse(JSON.stringify(this.articleData))
 					oldData.push(...data)
 					this.articleData = oldData
-					console.log(this.articleData);
+					// console.log(this.articleData);
 				})
 			}
 		}

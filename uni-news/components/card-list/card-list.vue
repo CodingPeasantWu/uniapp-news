@@ -8,7 +8,7 @@
 			<view class="list-card-content">
 				<view class="list-card-title">
 					<text>{{item.title}}</text>
-					<like-icon :item='item'></like-icon>
+					<like-icon :item='item' :types='types'></like-icon>
 				</view>
 				<view class="list-card-des">
 					<view class="list-card-tag">
@@ -24,7 +24,7 @@
 			<view class="list-card-content">
 				<view class="list-card-title">
 					<text>{{item.title}}</text>
-					<like-icon :item='item'></like-icon>
+					<like-icon :item='item' :types='types'></like-icon>
 				</view>
 				<view class="list-card-img">
 					<view class="list-card-img-item" v-if="index < 3" v-for="(item,index) in item.cover" :key='index' >
@@ -49,7 +49,7 @@
 			<view class="list-card-content">
 				<view class="list-card-title">
 					<text>{{item.title}}</text>
-					<like-icon :item='item'></like-icon>
+					<like-icon :item='item' :types='types'></like-icon>
 				</view>
 				<view class="list-card-des">
 					<view class="list-card-tag">
@@ -77,6 +77,10 @@
 				default(){
 					return {}
 				}
+			},
+			types:{
+				type:String,
+				default:''
 			}
 		},
 		methods:{
@@ -96,7 +100,11 @@
 				uni.navigateTo({
 					url:`/pages/detail/detail?params=`+JSON.stringify(params)
 				})
-			}
+			},
+			// heartClick(){
+			// 	console.log('cartlist');
+			// 	this.$emit('handleHeartClick')
+			// }
 		}
 	}
 </script>

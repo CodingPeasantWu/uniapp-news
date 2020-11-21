@@ -182,6 +182,7 @@
 						title:this.articleData.is_author_like ? '关注成功' : '取消关注',
 						icon:'none'
 					})
+					uni.$emit('onForus')
 				}).catch(err=>{
 					uni.hideLoading()
 				})
@@ -201,7 +202,7 @@
 						title:this.articleData.is_like ? '收藏成功' : '取消收藏',
 						icon:'none'
 					})
-					uni.$emit('update')
+					uni.$emit('update','follow')
 				}).catch(err=>{
 					uni.hideLoading()
 				})

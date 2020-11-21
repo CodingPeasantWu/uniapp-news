@@ -36,10 +36,14 @@
 		created() {
 			// this.getArticle(this.swiperIndex)
 			// console.log(this.tabList)
-			uni.$on('update',()=>{
-				this.articleNewData = {}
-				this.load = {}
-				this.getArticle(this.tabIndex)
+			uni.$on('update',(e)=>{
+				// 加个标志位判断是否刷新
+				// console.log(e);
+				if(e === 'follow'){
+					this.articleNewData = {}
+					this.load = {}
+					this.getArticle(this.tabIndex)
+				}
 			})
 		},
 		methods:{

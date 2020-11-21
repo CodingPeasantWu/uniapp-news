@@ -10,23 +10,23 @@
 		}, {
 			"path": "pages/tabbar/follow/follow",
 			"style": {
-				"navigationBarTitleText": "",
+				"navigationBarTitleText": "关注",
 				"enablePullDownRefresh": false
 			}
 
 		}, {
 			"path": "pages/tabbar/my/my",
 			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
+				"enablePullDownRefresh": false,
+				"navigationBarTitleText":"个人中心"
 			}
 
 		}, {
 			"path": "pages/search/search",
 			"style": {
-				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false,
-				"navigationStyle": "custom"
+				"navigationStyle": "custom",
+				"navigationBarTitleText":"搜索"
 			}
 
 		},
@@ -40,7 +40,7 @@
 		}, {
 			"path": "pages/detail/detail",
 			"style": {
-				"navigationBarTitleText": "",
+				"navigationBarTitleText": "文章详情",
 				"enablePullDownRefresh": false
 			}
 
@@ -49,7 +49,34 @@
             "path" : "pages/detail-comments/detail-comments",
             "style" :                                                                                    
             {
+                "navigationBarTitleText": "回复详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "components/list-author/list-author",
+            "style" :                                                                                    
+            {
                 "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/my_article/my_article",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的文章",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/point/point",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "意见反馈",
                 "enablePullDownRefresh": false
             }
             
